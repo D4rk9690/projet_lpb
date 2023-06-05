@@ -93,7 +93,6 @@ input[type="submit"]:hover {
     background-color: #555;
 }
 
-
 .calendar-day {
     width: 100px;
     height: 100px;
@@ -113,4 +112,8 @@ input[type="submit"]:hover {
 
 .calendar-day:hover:not(.reserved) {
     background-color: #f2f2f2;
+}
+
+footer {
+    height: 100px;
 }
