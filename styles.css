@@ -106,10 +106,17 @@ nav li {
     max-width: 1600px;
 }
 
-.hero-section p {
+.hero-text-1 {
+    font-size: 32px;
+    max-width: 75%;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.hero-text-2 {
     font-size: 26px;
     max-width: 75%;
-    margin: 1rem 0 3.5rem 0;
+    margin-bottom: 4rem;
 }
 
 .btn-home {
@@ -381,6 +388,7 @@ footer p {
     width: 100vw;
     transform: translateX(-50%);
     background-color: hsla(209, 22%, 19%, 0.534);
+    color: rgb(201, 201, 201);
     backdrop-filter: blur(10px);
     font-size: 13px;
 }
