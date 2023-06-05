@@ -1,17 +1,4 @@
 <?php
-// Database credentials
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "examfin";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 // Get form data
 $houseName = $_POST['house_name'];
@@ -19,7 +6,7 @@ $image = $_FILES['image']['name'];
 $description = $_POST['description'];
 
 // Upload image file
-$targetDir = "images/";
+$targetDir = "../images/";
 $targetFile = $targetDir . basename($_FILES["image"]["name"]);
 move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile);
 

@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $description = $_POST['description'];
             
             // Upload image file
-            $targetDir = "images/";
+            $targetDir = "../images/";
             $targetFile = $targetDir . basename($_FILES["image"]["name"]);
             move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile);
             
@@ -168,7 +168,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['house_id']) && $_POST
         echo '<h2>Selected House Details</h2>';
         echo 'House ID: ' . $selectedHouseRow['id'] . '<br>';
         echo 'House Name: ' . $selectedHouseRow['house_name'] . '<br>';
-        echo 'Image: <img src="images/' . $selectedHouseRow['image'] . '" alt="House Image" width="200"><br>';
+        echo 'Image: <img src="../images/' . $selectedHouseRow['image'] . '" alt="House Image" width="200"><br>';
         echo 'Description: ' . $selectedHouseRow['description'] . '<br>';
         echo '</div>';
     }

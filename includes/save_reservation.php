@@ -1,17 +1,7 @@
 <?php
-// Database credentials
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "examfin";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Include the database configuration file
+include 'db_config.php';
 
 // Handle reservation form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -1,20 +1,125 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: #111;
+    background-color: hsl(207, 19%, 9%);
+    font-family: "Lato", sans-serif;
     color: #fff;
 }
 
+h3 {
+    text-transform: uppercase;
+}
+
+nav {
+    display: grid;
+    position: fixed;
+    height: 5rem;
+    top: 0;
+    width: 100vw;
+    grid-template-columns: 20vw 1fr 20vw;
+    background-color: hsla(209, 22%, 19%, 0.534);
+    backdrop-filter: blur(10px);
+    z-index: 5;
+}
+
+nav ul {
+    place-self: center;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.logo {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: rgb(214, 157, 1);
+    text-decoration: none;
+    justify-content: center;
+    place-self: center;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+nav li {
+    list-style: none;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+
+.nav-link:hover {
+    color: rgb(214, 157, 1);
+    transition: all 0.2s;
+}
+
+.fa-brands {
+    color: white;
+    transition: all 0.2s;
+}
+
+.fa-brands:hover {
+    transform: translateY(-0.3rem);
+    transition: all 0.2s;
+    color: rgb(214, 157, 1);
+}
+
+/* INDEX PAGE */
+
+.hero-section {
+    background-image: url(./images/hero.jpg);
+    background-size: cover;
+}
+
+/* HOUSE PAGE */
+
+.house-section {
+    position: absolute;
+    height: max-content;
+}
+
+.house-section:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background-image: url(./images/chalet-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+}
+
 .house-container {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 10rem;
+    /* max-width: 1600px; */
 }
 
 .house-box {
     width: 30%;
-    background-color: #222;
+    background-color: hsla(209, 22%, 19%, 0.534);
+    backdrop-filter: blur(10px);
     border-radius: 5px;
     margin-bottom: 20px;
-    padding: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .house-box img {
@@ -32,13 +137,22 @@ body {
     margin-bottom: 10px;
 }
 
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
 .btn-show-description {
-    background-color: #333;
+    background-color: rgb(214, 157, 1);
     color: #fff;
     border: none;
-    padding: 5px 10px;
+    padding: 0.7rem 1.4rem;
+    max-width: fit-content;
     border-radius: 5px;
     cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 2rem 0;
 }
 
 .description-box {
@@ -50,7 +164,6 @@ body {
     color: #fff;
 }
 
-/* Additional styling for dark mode */
 a {
     color: #fff;
 }
@@ -60,12 +173,19 @@ a:hover {
 }
 
 button {
-    background-color: #333;
+    background-color: rgb(214, 157, 1);
     color: #fff;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    border: none;
+    transition: all 0.2s;
+    max-width: fit-content;
 }
 
 button:hover {
-    background-color: #555;
+    background-color: rgb(241, 185, 31);
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
 input[type="text"],
@@ -93,27 +213,120 @@ input[type="submit"]:hover {
     background-color: #555;
 }
 
+input[type="date"] {
+    background-color: rgb(233, 233, 233);
+    border: none;
+    padding: 0.45rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+input[type="date"]:focus {
+    outline: none;
+}
+
+.calendar {
+    margin-bottom: 2rem;
+}
+
 .calendar-day {
-    width: 100px;
-    height: 100px;
-    border: 1px solid #ccc;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgba(214, 157, 1, 0.644);
     display: inline-block;
     text-align: center;
-    vertical-align: middle;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 5px;
 }
 
 .calendar-day.reserved {
-    background-color: #ff0000;
+    background-color: #ee1e039d;
     color: #fff;
     cursor: not-allowed;
+    transition: all 0.2s;
 }
 
 .calendar-day:hover:not(.reserved) {
-    background-color: #f2f2f2;
+    background-color: #15a55d;
+    transition: all 0.2s;
 }
 
-footer {
-    height: 100px;
+.reservation-form {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-book {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* CONTACT FORM  */
+
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contact-container {
+    background-color: hsla(209, 22%, 19%, 0.534);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#contact-form p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#contact-form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#contact-form input,
+#contact-form input[type="email"],
+#contact-form textarea {
+    background-color: hsla(208, 23%, 30%, 0.534);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: white;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-contact {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
 }

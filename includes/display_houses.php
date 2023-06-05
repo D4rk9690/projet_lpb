@@ -1,17 +1,7 @@
 <?php
-// Database credentials
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "examfin";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Include the database configuration file
+include 'db_config.php';
 
 // Handle reservation form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -38,10 +28,10 @@ if ($result->num_rows > 0) {
 
         // Display house box
         echo '<div class="house-box">';
-        echo '<img src="images/' . $image . '" alt="' . $houseName . '">';
+        echo '<img src="../images/' . $image . '" alt="' . $houseName . '">';
         echo '<h3>' . $houseName . '</h3>';
         echo '<p class="description">' . $description . '</p>';
-        echo '<button class="btn-show-description" data-house="' . $houseId . '">Show Description</button>';
+        echo '<div class="btn-container"><button class="btn-show-description" data-house="' . $houseId . '">Show Description</button></div>';
 
         // Display house agenda
         echo '<div class="agenda" data-house="' . $houseId . '">';
@@ -67,7 +57,7 @@ if ($result->num_rows > 0) {
         echo '<form class="reservation-form" method="POST" action="">';
         echo '<input type="hidden" name="house_id" value="' . $houseId . '">';
         echo '<input type="date" name="reservation_date">';
-        echo '<button type="submit">Reserve</button>';
+        echo '<button class="btn-book" type="submit">Reserver</button>';
         echo '</form>';
         echo '</div>';
 
