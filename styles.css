@@ -12,6 +12,13 @@ body {
     color: #fff;
 }
 
+h1 {
+    font-size: 80px;
+    line-height: 1.2;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+}
+
 h3 {
     text-transform: uppercase;
 }
@@ -19,6 +26,7 @@ h3 {
 nav {
     display: grid;
     position: fixed;
+    place-items: center;
     height: 5rem;
     top: 0;
     width: 100vw;
@@ -35,14 +43,8 @@ nav ul {
 }
 
 .logo {
-    font-size: 25px;
-    text-transform: uppercase;
-    color: rgb(214, 157, 1);
-    text-decoration: none;
-    justify-content: center;
-    place-self: center;
-    align-items: center;
-    margin-left: 2rem;
+    width: 80px;
+    height: auto;
 }
 
 nav li {
@@ -52,7 +54,8 @@ nav li {
 .nav-link {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
     transition: all 0.2s;
 }
 
@@ -74,19 +77,14 @@ nav li {
 
 /* INDEX PAGE */
 
-.hero-section {
-    background-image: url(./images/hero.jpg);
-    background-size: cover;
+#home {
+    position: relative;
+    height: 100vh;
 }
 
-/* HOUSE PAGE */
-
-.house-section {
-    position: absolute;
-    height: max-content;
-}
-
-.house-section:before {
+#home:before,
+.house-section:before,
+#contact:before {
     content: " ";
     display: block;
     position: absolute;
@@ -101,13 +99,52 @@ nav li {
     background-position: 50% 0;
 }
 
+.hero-section {
+    position: relative;
+    padding: 18rem 12rem 0rem 12rem;
+    margin: auto;
+    max-width: 1600px;
+}
+
+.hero-section p {
+    font-size: 26px;
+    max-width: 75%;
+    margin: 1rem 0 3.5rem 0;
+}
+
+.btn-home {
+    background-color: rgb(214, 157, 1);
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border: none;
+    transition: all 0.2s;
+    max-width: fit-content;
+}
+
+.btn-home:hover {
+    background-color: rgb(241, 185, 31);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* HOUSE PAGE */
+
+.house-section {
+    position: relative;
+    height: 100vh;
+}
+
 .house-container {
     position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10rem;
-    /* max-width: 1600px; */
+    padding: 13rem 5rem;
 }
 
 .house-box {
@@ -270,9 +307,11 @@ input[type="date"]:focus {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
 }
 
 .contact-container {
+    position: relative;
     background-color: hsla(209, 22%, 19%, 0.534);
     backdrop-filter: blur(10px);
     padding: 20px;
@@ -329,4 +368,19 @@ input[type="date"]:focus {
 input:focus,
 textarea:focus {
     outline: none;
+}
+
+/* FOOTER */
+
+footer p {
+    text-align: center;
+    position: absolute;
+    padding: 0.5rem;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background-color: hsla(209, 22%, 19%, 0.534);
+    backdrop-filter: blur(10px);
+    font-size: 13px;
 }

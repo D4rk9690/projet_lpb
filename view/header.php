@@ -9,14 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ff4f8ab1ed.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <nav>
-            <a class="logo" href="#">
-                <img src="" alt="Logo">
+            <a class="logo" href="./index.php">
+                <img class="logo" src="../images/logo.png" alt="Logo">
             </a>
             <ul>
                 <li>

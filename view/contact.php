@@ -80,7 +80,7 @@ function testInput($data) {
         <div class="contact-container">
             <form id="contact-form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <h1>Contact</h1>
-                <p>Besoin de renseignements ? <br> Nous répondons à toutes vos questions</p>
+                <p>Besoin de renseignements ? <br> Nous répondons à toutes vos questions.</p>
                 <label for="firstName">Prénom</label>
                 <input type="text" name="firstName" required>
     
