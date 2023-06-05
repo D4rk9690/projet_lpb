@@ -17,20 +17,42 @@
     <link rel="manifest" href="../favicon/site.webmanifest">
 </head>
 <body>
+<?php 
+$currentURL = $_SERVER['PHP_SELF'];
+$currentPage = basename($currentURL);
+?>
     <header>
         <nav>
             <a class="logo" href="./index.php">
                 <img class="logo" src="../images/logo.png" alt="Logo">
             </a>
             <ul>
-                <li>
-                    <a class="nav-link" href="./index.php">Accueil</a>
+            <li>
+                    <a <?php
+                if($currentPage=="index.php"){
+                    ?>
+                        style="color: rgb(214, 157, 1)"
+                    <?php
+                }
+                ?>class="nav-link" href="./index.php">Accueil</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="./shop.php">Nos Chalets</a>
+                    <a <?php
+                if($currentPage=="shop.php"){
+                    ?>
+                        style="color: rgb(214, 157, 1)"
+                    <?php
+                }
+                ?>class="nav-link" href="./shop.php">Nos Chalets</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="./contact.php">Contact</a>
+                    <a                 <?php
+                if($currentPage=="contact.php"){
+                    ?>
+                        style="color: rgb(214, 157, 1)"
+                    <?php
+                }
+                ?> class="nav-link" href="./contact.php">Contact</a>
                 </li>
             </ul>
             <ul>
